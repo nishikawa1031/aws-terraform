@@ -1,0 +1,1 @@
+Udemyの「ゼロから実践するamazon web services」内の構成をterraformで作成してみた
