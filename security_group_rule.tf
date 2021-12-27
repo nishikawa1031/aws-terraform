@@ -24,3 +24,12 @@ resource "aws_security_group_rule" "ec2-sg-rule3" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.ec2-sg.id
 }
+
+resource "aws_security_group_rule" "rds-sg-rule" {
+  type                     = "ingress"
+  from_port                = 3306
+  to_port                  = 3306
+  protocol                 = "tcp"
+  source_security_group_id = aws_security_group.ec2-sg.id #アプリケーションサーバ用のセキュリティグループからのアクセスを許可
+  security_group_id        = aws_security_group.rds-sg.id
+}

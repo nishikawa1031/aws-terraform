@@ -24,3 +24,8 @@ resource "aws_subnet" "aws-and-infra-private-subnet-1c" {
     Name = "aws-and-infra-private-subnet-1c"
   }
 }
+
+resource "aws_db_subnet_group" "db-sg" {
+  name       = "db-sg"
+  subnet_ids = [aws_subnet.aws-and-infra-public-subnet-1a.id, aws_subnet.aws-and-infra-private-subnet-1c.id]
+}
