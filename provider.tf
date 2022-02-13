@@ -1,4 +1,4 @@
 provider "aws" {
-  profile = "terraform-user"
+  profile = "mac-terraform"
   region  = "ap-northeast-1"
 }
