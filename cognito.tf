@@ -17,21 +17,22 @@ resource "aws_cognito_user_pool" "user_pool" {
         }
     }
 
-     schema {
-         attribute_data_type      = "String"
-         developer_only_attribute = false
-         mutable                  = true
-         name                     = "email"
-         required                 = true
+    # 「schema」は登録するユーザーに求める属性。(メールアドレスや電話番号など)
+    # 「email」はデフォルトで有効になっている属性だが、今回は登録時に必須にしたいため設定。
+    schema {
+        attribute_data_type      = "String"
+        developer_only_attribute = false
+        mutable                  = true
+        name                     = "email"
+        required                 = true
 
-         string_attribute_constraints {
-             max_length = "2048"
-             min_length = "0"
-            }
+        string_attribute_constraints {
+            max_length = "2048"
+            min_length = "0"
         }
+    }
 
-     username_configuration {
-         case_sensitive = false
-        }
-
+    username_configuration {
+        case_sensitive = false
+    }
 }
