@@ -1,6 +1,6 @@
 resource "aws_db_instance" "my-db" {
   engine                  = "MySQL"
-  engine_version          = "5.7.30"
+  engine_version          = "5.7.33"
   identifier              = "sample-db"
   name                    = "sample_db"
   username                = "root" #masterユーザー名
